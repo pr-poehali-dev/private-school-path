@@ -621,7 +621,7 @@ export default function Index() {
               {[
                 { icon: "MapPin", title: "Адрес", value: "Путилковское шоссе, 4к1", sub: "Путилково, Московская область" },
                 { icon: "Phone", title: "Телефон", value: "+7 (991) 743-19-91", sub: "Пн–Пт с 8:00 до 18:00" },
-                { icon: "Mail", title: "Email", value: "info@school42.ru", sub: "Ответим в течение дня" },
+                { icon: "Mail", title: "Email", value: "i@panarin-top.ru", sub: "Ответим в течение дня" },
                 { icon: "Clock", title: "Режим работы", value: "Пн–Пт: 7:30 – 19:00", sub: "Сб: 9:00 – 15:00 (кружки)" },
               ].map((contact) => (
                 <div key={contact.title} className="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100 card-hover">
