@@ -231,7 +231,7 @@ export default function Index() {
 
               <div className="flex gap-8 mt-12 animate-fade-in" style={{ animationDelay: "0.4s" }}>
                 {[
-                  { num: "1200+", label: "учеников" },
+                  { num: "50", label: "учеников" },
                   { num: "85", label: "педагогов" },
                   { num: "30", label: "лет опыта" },
                 ].map((stat) => (
