@@ -203,13 +203,13 @@ export default function Index() {
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                 Приём на 2026/27 открыт
               </div>
-              <h1 className="font-montserrat font-black text-5xl lg:text-7xl leading-tight mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                Частный<br />
+              <p className="text-white/60 text-sm lg:text-base font-semibold uppercase tracking-widest mb-3 animate-fade-in" style={{ animationDelay: "0.05s" }}>
+                Частный педагогический центр
+              </p>
+              <h1 className="font-montserrat font-black text-5xl lg:text-6xl leading-tight mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
                 <span style={{ background: "linear-gradient(90deg,#A78BFA,#60A5FA,#34D399)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                  педагогический
+                  «Путь к<br />Знаниям»
                 </span>
-                <br />центр<br />
-                <span className="text-white">«Путь к Знаниям»</span>
               </h1>
               <p className="text-white/70 text-base lg:text-lg leading-relaxed mb-8 max-w-lg animate-fade-in" style={{ animationDelay: "0.2s" }}>
                 Путилково · для учеников 1–4 классов. Индивидуальный подход, опытные педагоги и уютная атмосфера — всё для успешного старта в учёбе.
