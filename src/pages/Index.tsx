@@ -11,6 +11,7 @@ const NAV_ITEMS = [
   { id: "programs", label: "Программы" },
   { id: "schedule", label: "Расписание" },
   { id: "news", label: "Новости" },
+  { id: "reviews", label: "Отзывы" },
   { id: "contacts", label: "Контакты" },
 ];
 
@@ -35,6 +36,13 @@ const NEWS = [
   { date: "10 мая 2026", tag: "Мероприятие", title: "Традиционный день науки прошёл на ура — 300 участников!", color: "bg-cyan-100 text-cyan-700" },
   { date: "2 мая 2026", tag: "Набор", title: "Открыт приём заявлений на 2026/27 учебный год для 1 класса.", color: "bg-pink-100 text-pink-700" },
   { date: "25 апреля 2026", tag: "Спорт", title: "Команда школы вышла в финал городского турнира по баскетболу.", color: "bg-amber-100 text-amber-700" },
+];
+
+const REVIEWS = [
+  { name: "Анна К.", child: "мама ученика 2 класса", text: "Отличный центр! Ребёнок стал намного увереннее в математике. Педагоги внимательные, всегда на связи и объясняют понятно.", stars: 5 },
+  { name: "Дмитрий П.", child: "папа ученицы 1 класса", text: "Дочка идёт на занятия с удовольствием — это главное! Спокойная атмосфера, небольшая группа, виден прогресс уже через месяц.", stars: 5 },
+  { name: "Елена В.", child: "мама ученика 3 класса", text: "Очень довольны центром. Сын подтянул русский язык и стал читать намного лучше. Педагог умеет найти подход к каждому.", stars: 5 },
+  { name: "Марина С.", child: "мама ученицы 4 класса", text: "Удобное расположение, приятный коллектив. Ребёнок готовится к переходу в 5 класс — уверены, что справится!", stars: 5 },
 ];
 
 const SCHEDULE_DATA: Record<string, Record<string, string[]>> = {
@@ -468,8 +476,46 @@ export default function Index() {
         </div>
       </section>
 
+      {/* ── REVIEWS ── */}
+      <section id="reviews" className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16 section-fade">
+            <span className="inline-block grad-bg text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Отзывы</span>
+            <h2 className="font-montserrat font-black text-4xl lg:text-5xl text-gray-900 mb-4">
+              Говорят <span className="grad-text">родители</span>
+            </h2>
+            <p className="text-gray-500 text-lg max-w-xl mx-auto">Нам доверяют семьи из Путилково и ближайших районов</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {REVIEWS.map((review, i) => (
+              <div
+                key={review.name}
+                className="section-fade card-hover bg-white rounded-3xl p-7 border border-gray-100 flex flex-col gap-4"
+                style={{ transitionDelay: `${i * 0.1}s` }}
+              >
+                <div className="flex gap-1">
+                  {Array.from({ length: review.stars }).map((_, s) => (
+                    <span key={s} className="text-amber-400 text-lg">★</span>
+                  ))}
+                </div>
+                <p className="text-gray-700 leading-relaxed text-base">«{review.text}»</p>
+                <div className="flex items-center gap-3 mt-auto pt-4 border-t border-gray-100">
+                  <div className="w-10 h-10 rounded-full grad-bg flex items-center justify-center text-white font-bold font-montserrat text-sm flex-shrink-0">
+                    {review.name[0]}
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900 text-sm">{review.name}</div>
+                    <div className="text-gray-400 text-xs">{review.child}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CONTACTS ── */}
-      <section id="contacts" className="py-24 bg-gray-50">
+      <section id="contacts" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16 section-fade">
             <span className="inline-block grad-bg-3 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Контакты</span>
