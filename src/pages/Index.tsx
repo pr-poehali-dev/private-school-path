@@ -7,11 +7,9 @@ const TEACHER_IMG = "https://cdn.poehali.dev/projects/c9fb471b-567a-4bfb-bdc0-b5
 
 const NAV_ITEMS = [
   { id: "home", label: "Главная" },
-  { id: "about", label: "О школе" },
+  { id: "about", label: "О центре" },
   { id: "programs", label: "Программы" },
-  { id: "teachers", label: "Преподаватели" },
   { id: "schedule", label: "Расписание" },
-  { id: "gallery", label: "Галерея" },
   { id: "news", label: "Новости" },
   { id: "contacts", label: "Контакты" },
 ];
@@ -337,41 +335,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── TEACHERS ── */}
-      <section id="teachers" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16 section-fade">
-            <span className="inline-block grad-bg-2 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Педагоги</span>
-            <h2 className="font-montserrat font-black text-4xl lg:text-5xl text-gray-900 mb-4">
-              Лучшие <span className="grad-text-pink">учителя</span>
-            </h2>
-            <p className="text-gray-500 text-lg max-w-xl mx-auto">Опытные, любящие своё дело педагоги — главная сила нашей школы</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {TEACHERS.map((t, i) => (
-              <div
-                key={t.name}
-                className="section-fade card-hover bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 group"
-                style={{ transitionDelay: `${i * 0.1}s` }}
-              >
-                <div className="h-52 overflow-hidden relative">
-                  <img src={t.img} alt={t.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent" />
-                </div>
-                <div className="p-5">
-                  <h3 className="font-montserrat font-bold text-gray-900 mb-1">{t.name}</h3>
-                  <p className="grad-text text-sm font-semibold mb-1">{t.subject}</p>
-                  <p className="text-gray-400 text-xs flex items-center gap-1">
-                    <Icon name="Clock" size={12} />
-                    Опыт: {t.exp}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── SCHEDULE ── */}
       <section id="schedule" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -468,34 +431,6 @@ export default function Index() {
               <Icon name="Info" size={14} />
               Класс {selectedClass}, {selectedDay === "Пн" ? "понедельник" : selectedDay === "Вт" ? "вторник" : selectedDay === "Ср" ? "среда" : selectedDay === "Чт" ? "четверг" : "пятница"}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── GALLERY ── */}
-      <section id="gallery" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16 section-fade">
-            <span className="inline-block grad-bg text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Галерея</span>
-            <h2 className="font-montserrat font-black text-4xl lg:text-5xl text-gray-900 mb-4">
-              Жизнь <span className="grad-text">школы</span>
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 section-fade">
-            {[
-              { label: "Лаборатория", img: CLASSROOM_IMG, cls: "md:col-span-2 md:row-span-2", h: "h-[320px]" },
-              { label: "Спортзал", img: SCHOOL_IMG, cls: "", h: "h-[150px]" },
-              { label: "Актовый зал", img: TEACHER_IMG, cls: "", h: "h-[150px]" },
-              { label: "Библиотека", img: CLASSROOM_IMG, cls: "", h: "h-[150px]" },
-              { label: "Столовая", img: SCHOOL_IMG, cls: "", h: "h-[150px]" },
-              { label: "Спортплощадка", img: TEACHER_IMG, cls: "", h: "h-[150px]" },
-            ].map((item, i) => (
-              <div key={item.label} className={`relative rounded-3xl overflow-hidden group cursor-pointer ${item.cls} ${item.h}`}>
-                <img src={item.img} alt={item.label} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                <div className={`absolute inset-0 bg-gradient-to-br ${GALLERY_COLORS[i]} opacity-40 group-hover:opacity-60 transition-opacity`} />
-                <div className="absolute bottom-3 left-4 text-white font-montserrat font-bold text-sm drop-shadow-lg">{item.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
