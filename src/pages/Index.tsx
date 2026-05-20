@@ -619,7 +619,7 @@ export default function Index() {
 
             <div className="section-fade space-y-4">
               {[
-                { icon: "MapPin", title: "Адрес", value: "ул. Школьная, 42, Москва", sub: "Метро: Тверская (5 мин)" },
+                { icon: "MapPin", title: "Адрес", value: "Путилковское шоссе, 4к1", sub: "Путилково, Московская область" },
                 { icon: "Phone", title: "Телефон", value: "+7 (495) 123-45-67", sub: "Пн–Пт с 8:00 до 18:00" },
                 { icon: "Mail", title: "Email", value: "info@school42.ru", sub: "Ответим в течение дня" },
                 { icon: "Clock", title: "Режим работы", value: "Пн–Пт: 7:30 – 19:00", sub: "Сб: 9:00 – 15:00 (кружки)" },
