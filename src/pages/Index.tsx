@@ -137,9 +137,9 @@ export default function Index() {
             <div className="w-9 h-9 rounded-xl grad-bg flex items-center justify-center shadow-lg">
               <span className="text-white text-lg">🎓</span>
             </div>
-            <span className="font-montserrat text-lg text-gray-900">
-              <span className="grad-text font-black">Школа</span>
-              <span className="text-gray-400 text-sm font-medium ml-1">№42</span>
+            <span className="font-montserrat text-gray-900">
+              <span className="grad-text font-black text-sm leading-tight block">Путь к Знаниям</span>
+              <span className="text-gray-400 text-xs font-medium block leading-tight">Путилково · 1–4 классы</span>
             </span>
           </div>
 
@@ -204,14 +204,17 @@ export default function Index() {
                 Приём на 2026/27 открыт
               </div>
               <h1 className="font-montserrat font-black text-5xl lg:text-7xl leading-tight mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                Школа,<br />
+                Частный<br />
                 <span style={{ background: "linear-gradient(90deg,#A78BFA,#60A5FA,#34D399)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                  которую
+                  педагогический
                 </span>
-                <br />любят дети
+                <br />центр
               </h1>
-              <p className="text-white/70 text-lg lg:text-xl leading-relaxed mb-8 max-w-lg animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                Современное образование, талантливые педагоги и дружная атмосфера — всё для того, чтобы каждый ребёнок раскрыл свой потенциал.
+              <p className="text-white/70 text-lg lg:text-xl leading-relaxed mb-4 max-w-lg animate-fade-in" style={{ animationDelay: "0.15s" }}>
+                <span className="text-white font-bold text-2xl">&laquo;Путь к Знаниям&raquo;</span>
+              </p>
+              <p className="text-white/70 text-base lg:text-lg leading-relaxed mb-8 max-w-lg animate-fade-in" style={{ animationDelay: "0.2s" }}>
+                Путилково · для учеников 1–4 классов. Индивидуальный подход, опытные педагоги и уютная атмосфера — всё для успешного старта в учёбе.
               </p>
               <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
                 <button
@@ -277,15 +280,15 @@ export default function Index() {
               </div>
             </div>
             <div className="section-fade">
-              <span className="inline-block grad-bg text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">О школе</span>
+              <span className="inline-block grad-bg text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">О центре</span>
               <h2 className="font-montserrat font-black text-4xl lg:text-5xl text-gray-900 mb-6 leading-tight">
                 Место, где рождаются <span className="grad-text">таланты</span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-4">
-                Школа №42 — современное образовательное учреждение с 30-летней историей. Мы объединяем лучшие традиции классического образования с инновационными подходами к обучению.
+                «Путь к Знаниям» — частный педагогический центр в Путилково для учеников 1–4 классов. Мы создали уютное пространство, где каждый ребёнок получает внимание и поддержку.
               </p>
               <p className="text-gray-600 leading-relaxed mb-8">
-                У нас обучается более 1200 учеников, и каждый — особенный. Наши выпускники поступают в ведущие вузы страны и мира.
+                Небольшие группы, индивидуальный подход и опытные педагоги помогают детям полюбить учёбу и уверенно двигаться вперёд.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {[
@@ -646,8 +649,8 @@ export default function Index() {
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl grad-bg-2 flex items-center justify-center text-xl">🎓</div>
               <div>
-                <div className="font-montserrat font-black text-lg">Школа №42</div>
-                <div className="text-white/50 text-xs">Официальный сайт</div>
+                <div className="font-montserrat font-black text-sm leading-tight">Путь к Знаниям</div>
+                <div className="text-white/50 text-xs">Путилково · 1–4 классы</div>
               </div>
             </div>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
