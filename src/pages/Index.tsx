@@ -17,12 +17,12 @@ const NAV_ITEMS = [
 ];
 
 const PROGRAMS = [
-  { icon: "BookOpen", title: "Начальная школа", grades: "1–4 классы", desc: "Основы знаний, творчество и развитие.", color: "from-violet-500 to-purple-600" },
-  { icon: "Microscope", title: "Естественные науки", grades: "5–11 классы", desc: "Химия, биология, физика на глубоком уровне.", color: "from-cyan-500 to-blue-600" },
-  { icon: "Calculator", title: "Математика и IT", grades: "5–11 классы", desc: "Алгебра, геометрия, программирование.", color: "from-orange-500 to-pink-600" },
-  { icon: "Palette", title: "Искусство и музыка", grades: "1–9 классы", desc: "Рисование, хореография, вокал, театр.", color: "from-pink-500 to-rose-600" },
-  { icon: "Globe", title: "Иностранные языки", grades: "2–11 классы", desc: "Английский, немецкий, китайский.", color: "from-emerald-500 to-teal-600" },
-  { icon: "Trophy", title: "Спорт и здоровье", grades: "1–11 классы", desc: "Физкультура, секции, соревнования.", color: "from-amber-500 to-orange-600" },
+  { icon: "Star", title: "Подготовка к школе", grades: "Дошкольники 5–7 лет", desc: "Чтение, счёт, развитие речи и мышления — плавный старт перед 1 классом.", color: "from-violet-500 to-purple-600" },
+  { icon: "BookOpen", title: "Русский язык и чтение", grades: "1–4 классы", desc: "Грамотное письмо, техника чтения, пересказ и работа с текстом.", color: "from-cyan-500 to-blue-600" },
+  { icon: "Calculator", title: "Математика", grades: "1–4 классы", desc: "Счёт, задачи, логика и основы геометрии в доступной форме.", color: "from-orange-500 to-pink-600" },
+  { icon: "Globe", title: "Английский язык", grades: "1–4 классы", desc: "Алфавит, базовая лексика, разговорный английский с нуля.", color: "from-emerald-500 to-teal-600" },
+  { icon: "Pencil", title: "Письмо и каллиграфия", grades: "1–2 классы", desc: "Красивый почерк, правильная постановка руки, прописи.", color: "from-pink-500 to-rose-600" },
+  { icon: "Brain", title: "Развитие и творчество", grades: "1–4 классы", desc: "Логика, память, внимание, рисование и проектная деятельность.", color: "from-amber-500 to-orange-600" },
 ];
 
 const TEACHERS = [
@@ -316,9 +316,9 @@ export default function Index() {
           <div className="text-center mb-16 section-fade">
             <span className="inline-block grad-bg text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Программы</span>
             <h2 className="font-montserrat font-black text-4xl lg:text-5xl text-gray-900 mb-4">
-              Учим <span className="grad-text">всему важному</span>
+              Программы для <span className="grad-text">1–4 классов</span>
             </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">6 направлений обучения — найдём призвание каждого ребёнка</p>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">6 направлений — от подготовки к школе до уверенного окончания начальной ступени</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {PROGRAMS.map((prog, i) => (
