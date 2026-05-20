@@ -283,17 +283,17 @@ export default function Index() {
                 Место, где рождаются <span className="grad-text">таланты</span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-4">
-                «Путь к Знаниям» — частный педагогический центр в Путилково для учеников 1–4 классов. Мы создали уютное пространство, где каждый ребёнок получает внимание и поддержку.
+                «Путь к Знаниям» — частный педагогический центр в Путилково, который работает уже 2 года. Сегодня у нас занимаются 50 учеников начальных классов — с 1 по 4.
               </p>
               <p className="text-gray-600 leading-relaxed mb-8">
-                Небольшие группы, индивидуальный подход и опытные педагоги помогают детям полюбить учёбу и уверенно двигаться вперёд.
+                Наши педагоги имеют более 5 лет опыта работы с детьми. Небольшие группы и индивидуальный подход позволяют каждому ребёнку расти в своём темпе и полюбить учёбу.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: "Award", text: "Государственная аккредитация" },
-                  { icon: "Users", text: "Малые классы — до 25 человек" },
-                  { icon: "Wifi", text: "Цифровые технологии" },
-                  { icon: "Heart", text: "Психологическая поддержка" },
+                  { icon: "Users", text: "Небольшие группы детей" },
+                  { icon: "Star", text: "Педагоги с опытом 5+ лет" },
+                  { icon: "Heart", text: "Уютная атмосфера" },
+                  { icon: "BookOpen", text: "Программы для 1–4 классов" },
                 ].map((item) => (
                   <div key={item.text} className="flex items-center gap-3 bg-white rounded-2xl p-4 shadow-sm">
                     <div className="w-9 h-9 grad-bg rounded-xl flex items-center justify-center flex-shrink-0">
