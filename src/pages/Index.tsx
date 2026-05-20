@@ -208,11 +208,9 @@ export default function Index() {
                 <span style={{ background: "linear-gradient(90deg,#A78BFA,#60A5FA,#34D399)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                   педагогический
                 </span>
-                <br />центр
+                <br />центр<br />
+                <span className="text-white">«Путь к Знаниям»</span>
               </h1>
-              <p className="text-white/70 text-lg lg:text-xl leading-relaxed mb-4 max-w-lg animate-fade-in" style={{ animationDelay: "0.15s" }}>
-                <span className="text-white font-bold text-2xl">&laquo;Путь к Знаниям&raquo;</span>
-              </p>
               <p className="text-white/70 text-base lg:text-lg leading-relaxed mb-8 max-w-lg animate-fade-in" style={{ animationDelay: "0.2s" }}>
                 Путилково · для учеников 1–4 классов. Индивидуальный подход, опытные педагоги и уютная атмосфера — всё для успешного старта в учёбе.
               </p>
