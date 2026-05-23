@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { id: "about", label: "О центре" },
   { id: "programs", label: "Программы" },
   { id: "schedule", label: "Расписание" },
+  { id: "tariffs", label: "Тарифы" },
   { id: "news", label: "Новости" },
   { id: "reviews", label: "Отзывы" },
   { id: "contacts", label: "Контакты" },
@@ -43,6 +44,85 @@ const REVIEWS = [
   { name: "Дмитрий П.", child: "папа ученицы 1 класса", text: "Дочка идёт на занятия с удовольствием — это главное! Спокойная атмосфера, небольшая группа, виден прогресс уже через месяц.", stars: 5 },
   { name: "Елена В.", child: "мама ученика 3 класса", text: "Очень довольны центром. Сын подтянул русский язык и стал читать намного лучше. Педагог умеет найти подход к каждому.", stars: 5 },
   { name: "Марина С.", child: "мама ученицы 4 класса", text: "Удобное расположение, приятный коллектив. Ребёнок готовится к переходу в 5 класс — уверены, что справится!", stars: 5 },
+];
+
+const TARIFF_CATEGORIES = [
+  {
+    label: "Подготовка и школьные предметы",
+    color: "from-violet-500 to-purple-600",
+    items: [
+      { name: "Подготовка к школе", age: "5–7", dur: "60 мин", trial: 800, a4: 4000, a8: 6000, a12: null },
+      { name: "Подготовка к школе", age: "5–7", dur: "120 мин", trial: 1600, a4: 6000, a8: 8000, a12: null },
+      { name: "Подготовка к ВПР (индивидуально)", age: "7+", dur: "60 мин", trial: 800, a4: null, a8: 12000, a12: 17000 },
+      { name: "Подготовка к ВПР (групповое)", age: "7+", dur: "60 мин", trial: 800, a4: null, a8: 8000, a12: 12000 },
+      { name: "ТРИЗ + олимпиадная математика", age: "6+", dur: "60 мин", trial: 800, a4: 4500, a8: 9000, a12: null },
+      { name: "Подготовка к ОГЭ", age: "8–9 кл", dur: "60 мин", trial: 800, a4: 5000, a8: 9600, a12: null },
+      { name: "Подготовка к ЕГЭ", age: "10–11 кл", dur: "60 мин", trial: 800, a4: 6000, a8: 12000, a12: null },
+      { name: "Репетиторство", age: "7–15", dur: "60 мин", trial: 800, a4: 8000, a8: 16000, a12: 20000 },
+    ],
+  },
+  {
+    label: "Скорочтение, каллиграфия, шахматы",
+    color: "from-cyan-500 to-blue-600",
+    items: [
+      { name: "Скорочтение", age: "5–7", dur: "60 мин", trial: 800, a4: 3200, a8: 6400, a12: null },
+      { name: "Скорочтение", age: "8–12", dur: "60 мин", trial: 800, a4: 4800, a8: 9600, a12: null },
+      { name: "Каллиграфия", age: "7+", dur: "60 мин", trial: 800, a4: 3800, a8: 6500, a12: null },
+      { name: "Шахматы", age: "4–8", dur: "60 мин", trial: 800, a4: 4000, a8: 6000, a12: null },
+    ],
+  },
+  {
+    label: "Английский язык",
+    color: "from-emerald-500 to-teal-600",
+    items: [
+      { name: "Английский малыши", age: "3–5", dur: "45 мин", trial: 800, a4: 4000, a8: 7000, a12: null },
+      { name: "Английский с русскоговорящим педагогом", age: "5–12", dur: "60 мин", trial: 800, a4: 4000, a8: 7000, a12: null },
+      { name: "Английский разговорный с носителем", age: "5+", dur: "60 мин", trial: 800, a4: 5600, a8: 8500, a12: null },
+    ],
+  },
+  {
+    label: "Арт-студия и творчество",
+    color: "from-pink-500 to-rose-600",
+    items: [
+      { name: "Арт-терапия", age: "4+", dur: "45 мин", trial: 800, a4: 3500, a8: 7000, a12: 10500 },
+      { name: "Живопись", age: "3+", dur: "60 мин", trial: 800, a4: 3800, a8: 6500, a12: null },
+      { name: "Развивающий рисунок + живопись", age: "6–9", dur: "90 мин", trial: 800, a4: 5600, a8: null, a12: null },
+      { name: "Академический рисунок + живопись", age: "10+", dur: "90 мин", trial: 800, a4: 5600, a8: null, a12: null },
+      { name: "Творческая мастерская АРТ студия", age: "5+", dur: "60 мин", trial: 800, a4: 3500, a8: 6500, a12: null },
+    ],
+  },
+  {
+    label: "Робототехника",
+    color: "from-amber-500 to-orange-600",
+    items: [
+      { name: "Робототехника", age: "5+", dur: "60 мин", trial: 1000, a4: 6500, a8: 11000, a12: null },
+    ],
+  },
+  {
+    label: "Нейропсихология",
+    color: "from-indigo-500 to-violet-600",
+    items: [
+      { name: "Индивид. Нейрографика", age: "взросл.", dur: "2,5–3 ч", trial: 5000, a4: 20000, a8: null, a12: null },
+      { name: "Групп. Нейрографика", age: "взросл.", dur: "2,5–3 ч", trial: 3000, a4: 10500, a8: null, a12: null },
+      { name: "Диагностика нейропсихолога (1-е занятие)", age: "4+", dur: "45 мин", trial: 3000, a4: null, a8: null, a12: null },
+      { name: "Консультация нейропсихолога", age: "взросл.", dur: "60 мин", trial: 5000, a4: null, a8: null, a12: null },
+      { name: "Индивид. нейропсихолог", age: "взросл.", dur: "60 мин", trial: 5000, a4: 20000, a8: 36000, a12: null },
+      { name: "Неопсихология индив. (глубинная работа)", age: "взросл.", dur: "60 мин", trial: 5000, a4: 20000, a8: 36000, a12: null },
+      { name: "Индивид. психолог (детский, подростковый, семейный)", age: "—", dur: "60 мин", trial: 800, a4: 8000, a8: 14000, a12: null },
+    ],
+  },
+  {
+    label: "Индивидуальные программы",
+    color: "from-rose-500 to-pink-600",
+    items: [
+      { name: "Диагностика готовности к школе (педагог)", age: "5+", dur: "45–60 мин", trial: 2000, a4: null, a8: null, a12: null },
+      { name: "Индивид. подготовка к школе", age: "5+", dur: "45–60 мин", trial: 2000, a4: 8000, a8: 14000, a12: null },
+      { name: "Индивид. каллиграфия", age: "7+", dur: "60 мин", trial: 800, a4: 6400, a8: 12800, a12: null },
+      { name: "Индивид. шахматы", age: "4+", dur: "60 мин", trial: 800, a4: 6400, a8: 11000, a12: null },
+      { name: "Индивид. английский с носителем", age: "5–15", dur: "45–60 мин", trial: 800, a4: 12000, a8: 14400, a12: null },
+      { name: "Индивид. английский с русскоговорящим педагогом", age: "5–15", dur: "45–60 мин", trial: 800, a4: 6400, a8: 11000, a12: null },
+    ],
+  },
 ];
 
 const SCHEDULE_DATA: Record<string, Record<string, string[]>> = {
@@ -443,8 +523,64 @@ export default function Index() {
         </div>
       </section>
 
+      {/* ── TARIFFS ── */}
+      <section id="tariffs" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16 section-fade">
+            <span className="inline-block grad-bg-3 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Стоимость</span>
+            <h2 className="font-montserrat font-black text-4xl lg:text-5xl text-gray-900 mb-4">
+              Тарифы и <span className="grad-text">цены</span>
+            </h2>
+            <p className="text-gray-500 text-lg max-w-xl mx-auto">Пробное занятие доступно по всем направлениям. Абонементы на 4, 8 и 12 занятий.</p>
+          </div>
+
+          <div className="space-y-10">
+            {TARIFF_CATEGORIES.map((cat) => (
+              <div key={cat.label} className="section-fade">
+                <div className={`inline-flex items-center gap-2 bg-gradient-to-r ${cat.color} text-white text-sm font-bold px-4 py-2 rounded-full mb-4`}>
+                  {cat.label}
+                </div>
+                <div className="overflow-x-auto rounded-2xl border border-gray-100">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-gray-50 text-gray-500 text-xs uppercase tracking-wider">
+                        <th className="text-left px-4 py-3 font-semibold">Направление</th>
+                        <th className="text-center px-3 py-3 font-semibold">Возраст</th>
+                        <th className="text-center px-3 py-3 font-semibold">Длительность</th>
+                        <th className="text-center px-3 py-3 font-semibold">Пробное</th>
+                        <th className="text-center px-3 py-3 font-semibold">4 занятия</th>
+                        <th className="text-center px-3 py-3 font-semibold">8 занятий</th>
+                        <th className="text-center px-3 py-3 font-semibold">12 занятий</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {cat.items.map((item, i) => (
+                        <tr key={i} className={`border-t border-gray-50 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}`}>
+                          <td className="px-4 py-3 font-medium text-gray-800">{item.name}</td>
+                          <td className="px-3 py-3 text-center text-gray-500">{item.age}</td>
+                          <td className="px-3 py-3 text-center text-gray-500">{item.dur}</td>
+                          <td className="px-3 py-3 text-center font-semibold text-violet-600">{item.trial.toLocaleString()} ₽</td>
+                          <td className="px-3 py-3 text-center text-gray-700">{item.a4 ? `${item.a4.toLocaleString()} ₽` : <span className="text-gray-300">—</span>}</td>
+                          <td className="px-3 py-3 text-center text-gray-700">{item.a8 ? `${item.a8.toLocaleString()} ₽` : <span className="text-gray-300">—</span>}</td>
+                          <td className="px-3 py-3 text-center text-gray-700">{item.a12 ? `${item.a12.toLocaleString()} ₽` : <span className="text-gray-300">—</span>}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 bg-violet-50 rounded-2xl p-5 text-sm text-violet-700 flex gap-3 items-start section-fade">
+            <Icon name="Info" size={18} className="flex-shrink-0 mt-0.5" />
+            <span>Срок действия абонемента — <strong>5 недель</strong> с момента первого занятия. При покупке абонемента пробное занятие не требуется.</span>
+          </div>
+        </div>
+      </section>
+
       {/* ── NEWS ── */}
-      <section id="news" className="py-24 bg-white">
+      <section id="news" className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16 section-fade">
             <span className="inline-block grad-bg-2 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Новости</span>
