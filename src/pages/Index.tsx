@@ -9,7 +9,6 @@ const NAV_ITEMS = [
   { id: "home", label: "Главная" },
   { id: "about", label: "О центре" },
   { id: "programs", label: "Программы" },
-  { id: "schedule", label: "Расписание" },
   { id: "tariffs", label: "Тарифы" },
   { id: "news", label: "Новости" },
   { id: "reviews", label: "Отзывы" },
@@ -419,106 +418,6 @@ export default function Index() {
                 <p className="text-gray-500 text-sm leading-relaxed">{prog.desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── SCHEDULE ── */}
-      <section id="schedule" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12 section-fade">
-            <span className="inline-block grad-bg-3 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Расписание</span>
-            <h2 className="font-montserrat font-black text-4xl lg:text-5xl text-gray-900 mb-4">
-              Расписание <span className="grad-text">занятий</span>
-            </h2>
-            <p className="text-gray-500 text-lg">Выберите класс и день недели</p>
-          </div>
-
-          <div className="section-fade bg-gray-50 rounded-3xl p-6 lg:p-8 border border-gray-100">
-            <div className="flex flex-wrap gap-6 mb-8">
-              <div>
-                <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Класс</div>
-                <div className="flex gap-2">
-                  {CLASSES.map((cls) => (
-                    <button
-                      key={cls}
-                      onClick={() => setSelectedClass(cls)}
-                      className={`px-4 py-2 rounded-xl font-semibold text-sm transition-all ${
-                        selectedClass === cls
-                          ? "grad-bg text-white shadow-lg shadow-violet-200"
-                          : "bg-white text-gray-600 border border-gray-200 hover:border-violet-300"
-                      }`}
-                    >
-                      {cls}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">День недели</div>
-                <div className="flex gap-2 flex-wrap">
-                  {DAYS.map((day) => (
-                    <button
-                      key={day}
-                      onClick={() => setSelectedDay(day)}
-                      className={`px-4 py-2 rounded-xl font-semibold text-sm transition-all ${
-                        selectedDay === day
-                          ? "grad-bg-2 text-white shadow-lg shadow-pink-200"
-                          : "bg-white text-gray-600 border border-gray-200 hover:border-pink-300"
-                      }`}
-                    >
-                      {day}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-3">
-              {TIMES.map((time, idx) => {
-                const lesson = SCHEDULE_DATA[selectedClass]?.[selectedDay]?.[idx] || "";
-                const [subject, teacher] = lesson.split(" — ");
-                return (
-                  <div
-                    key={time}
-                    className={`schedule-cell flex items-center gap-4 bg-white rounded-2xl px-5 py-4 border transition-all ${
-                      lesson ? "border-gray-100 hover:border-violet-200 hover:shadow-md" : "border-dashed border-gray-200 opacity-50"
-                    }`}
-                  >
-                    <div className="flex-shrink-0 w-24 text-center">
-                      <div className="font-montserrat font-bold text-sm text-gray-400">{idx + 1} урок</div>
-                      <div className="text-xs text-gray-400 mt-0.5">{time}</div>
-                    </div>
-                    <div className={`w-1 h-10 rounded-full flex-shrink-0 ${lesson ? "grad-bg" : "bg-gray-200"}`} />
-                    <div className="flex-1">
-                      {lesson ? (
-                        <>
-                          <div className="font-semibold text-gray-900">{subject}</div>
-                          {teacher && (
-                            <div className="text-sm text-gray-400 mt-0.5 flex items-center gap-1">
-                              <Icon name="User" size={12} />
-                              {teacher}
-                            </div>
-                          )}
-                        </>
-                      ) : (
-                        <span className="text-gray-400 text-sm">— Нет урока —</span>
-                      )}
-                    </div>
-                    {lesson && (
-                      <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-violet-50 flex items-center justify-center">
-                        <Icon name="BookOpen" size={14} className="text-violet-500" />
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-
-            <div className="mt-6 text-center text-sm text-gray-400 flex items-center justify-center gap-2">
-              <Icon name="Info" size={14} />
-              Класс {selectedClass}, {selectedDay === "Пн" ? "понедельник" : selectedDay === "Вт" ? "вторник" : selectedDay === "Ср" ? "среда" : selectedDay === "Чт" ? "четверг" : "пятница"}
-            </div>
           </div>
         </div>
       </section>
