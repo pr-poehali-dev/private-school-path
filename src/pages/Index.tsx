@@ -296,9 +296,20 @@ export default function Index() {
                   «Путь к<br />Знаниям»
                 </span>
               </h1>
-              <p className="text-white/70 text-base lg:text-lg leading-relaxed mb-8 max-w-lg animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              <p className="text-white/70 text-base lg:text-lg leading-relaxed mb-5 max-w-lg animate-fade-in" style={{ animationDelay: "0.2s" }}>
                 Путилково · для учеников 1–4 классов. Индивидуальный подход, опытные педагоги и уютная атмосфера — всё для успешного старта в учёбе.
               </p>
+              <div className="flex flex-wrap gap-2 mb-8 animate-fade-in" style={{ animationDelay: "0.25s" }}>
+                <span className="glass text-white/90 text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                  📚 Подготовка к ОГЭ и ЕГЭ
+                </span>
+                <span className="glass text-white/90 text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                  🌍 Страны СНГ
+                </span>
+                <span className="glass text-white/90 text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                  🇨🇳 Китай
+                </span>
+              </div>
               <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
                 <button
                   onClick={() => scrollTo("contacts")}
