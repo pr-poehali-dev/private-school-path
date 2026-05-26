@@ -55,6 +55,11 @@ export default function TeachersSection() {
 
             <div className="text-center">
               <h3 className="font-montserrat font-black text-xl text-gray-900 mb-1">{teacher.name}</h3>
+              {"role" in teacher && teacher.role && (
+                <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full bg-gradient-to-r ${teacher.color} text-white mt-1`}>
+                  {teacher.role as string}
+                </span>
+              )}
             </div>
 
             <div className="w-full bg-gray-50 rounded-2xl p-5 border border-gray-100">
