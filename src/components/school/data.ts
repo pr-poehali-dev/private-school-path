@@ -97,7 +97,7 @@ export const TEACHERS = [
     color: "from-cyan-500 to-blue-600",
   },
   {
-    name: "Александр",
+    name: "Уперенко Александр Юрьевич",
     photo: "https://cdn.poehali.dev/projects/c9fb471b-567a-4bfb-bdc0-b51d4bb4ad8e/bucket/a208fcf7-11b3-42f4-9dbf-9e0f9ca487ae.jpg",
     subjects: ["подготовка к ОГЭ", "подготовка к ЕГЭ"],
     facts: [
