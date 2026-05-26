@@ -33,7 +33,7 @@ export const TEACHERS = [
   },
   {
     name: "Панарин Михаил Андреевич",
-    role: "Директор",
+    role: "Директор частной школы",
     photo: "https://cdn.poehali.dev/projects/c9fb471b-567a-4bfb-bdc0-b51d4bb4ad8e/bucket/dd525915-de2e-4c84-855a-14126a1c3c1f.png",
     subjects: ["руководство центром", "творческие проекты", "музыка", "поэзия"],
     facts: [
