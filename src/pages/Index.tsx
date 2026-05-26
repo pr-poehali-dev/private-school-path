@@ -3,6 +3,7 @@ import Icon from "@/components/ui/icon";
 import { NAV_ITEMS } from "@/components/school/data";
 import HeroAboutPrograms from "@/components/school/HeroAboutPrograms";
 import TariffsNewsReviews from "@/components/school/TariffsNewsReviews";
+import TeachersSection from "@/components/school/TeachersSection";
 import ContactsFooter from "@/components/school/ContactsFooter";
 
 function useSectionFade() {
@@ -118,6 +119,7 @@ export default function Index() {
       </nav>
 
       <HeroAboutPrograms scrollTo={scrollTo} />
+      <TeachersSection />
       <TariffsNewsReviews />
       <ContactsFooter
         scrollTo={scrollTo}
