@@ -108,7 +108,7 @@ export const TEACHERS = [
     color: "from-orange-500 to-amber-600",
   },
   {
-    name: "Татьяна",
+    name: "Дубова Татьяна Николаевна",
     photo: "https://cdn.poehali.dev/projects/c9fb471b-567a-4bfb-bdc0-b51d4bb4ad8e/bucket/ecfcf7ca-3969-4fc9-ad12-a0a0d43e694e.jpg",
     subjects: ["начальная школа", "русский язык", "математика", "чтение"],
     facts: [
