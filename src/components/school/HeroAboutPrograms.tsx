@@ -62,7 +62,7 @@ export default function HeroAboutPrograms({ scrollTo }: Props) {
                 {[
                   { num: "50", label: "учеников" },
                   { num: "2 года", label: "центру" },
-                  { num: "5 лет", label: "опыт педагогов" },
+                  { num: "10 лет", label: "опыт педагогов" },
                 ].map((stat) => (
                   <div key={stat.label}>
                     <div className="font-montserrat font-black text-3xl text-white">{stat.num}</div>
@@ -115,12 +115,12 @@ export default function HeroAboutPrograms({ scrollTo }: Props) {
                 «Путь к Знаниям» — частный педагогический центр в Путилково, который работает уже 2 года. Сегодня у нас занимаются 50 учеников начальных классов — с 1 по 4.
               </p>
               <p className="text-gray-600 leading-relaxed mb-8">
-                Наши педагоги имеют более 5 лет опыта работы с детьми. Небольшие группы и индивидуальный подход позволяют каждому ребёнку расти в своём темпе и полюбить учёбу.
+                Наши педагоги имеют более 10 лет опыта работы с детьми. Небольшие группы и индивидуальный подход позволяют каждому ребёнку расти в своём темпе и полюбить учёбу.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { icon: "Users", text: "Небольшие группы детей" },
-                  { icon: "Star", text: "Педагоги с опытом 5+ лет" },
+                  { icon: "Star", text: "Педагоги с опытом 10+ лет" },
                   { icon: "Heart", text: "Уютная атмосфера" },
                   { icon: "BookOpen", text: "Программы для 1–4 классов" },
                 ].map((item) => (
