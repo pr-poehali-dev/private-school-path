@@ -107,9 +107,9 @@ export default function ContactsFooter({ scrollTo, formData, setFormData, formSe
             <div className="section-fade space-y-4">
               {[
                 { icon: "MapPin", title: "Адрес", value: "Путилковское шоссе, 4к1", sub: "Путилково, Московская область" },
-                { icon: "Phone", title: "Телефон", value: "+7 (991) 743-19-91", sub: "Пн–Пт с 8:00 до 18:00" },
+                { icon: "Phone", title: "Телефон", value: "+7 (991) 743-19-91", sub: "Пн–Вс с 9:00 до 20:00" },
                 { icon: "Mail", title: "Email", value: "i@panarin-top.ru", sub: "Ответим в течение дня" },
-                { icon: "Clock", title: "Режим работы", value: "Пн–Пт: 7:30 – 19:00", sub: "Сб: 9:00 – 15:00 (кружки)" },
+                { icon: "Clock", title: "Режим работы", value: "Пн–Вс: 9:00 – 20:00", sub: "Без выходных" },
               ].map((contact) => (
                 <div key={contact.title} className="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100 card-hover">
                   <div className="w-12 h-12 grad-bg rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
