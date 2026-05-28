@@ -4,6 +4,7 @@ import { NAV_ITEMS } from "@/components/school/data";
 import HeroAboutPrograms from "@/components/school/HeroAboutPrograms";
 import TariffsNewsReviews from "@/components/school/TariffsNewsReviews";
 import TeachersSection from "@/components/school/TeachersSection";
+import ChessSection from "@/components/school/ChessSection";
 import ContactsFooter from "@/components/school/ContactsFooter";
 
 function useSectionFade() {
@@ -120,6 +121,7 @@ export default function Index() {
 
       <HeroAboutPrograms scrollTo={scrollTo} />
       <TeachersSection />
+      <ChessSection scrollTo={scrollTo} />
       <TariffsNewsReviews />
       <ContactsFooter
         scrollTo={scrollTo}

@@ -7,6 +7,7 @@ export const NAV_ITEMS = [
   { id: "about", label: "О центре" },
   { id: "programs", label: "Программы" },
   { id: "teachers", label: "Педагоги" },
+  { id: "chess", label: "Шахматы" },
   { id: "tariffs", label: "Тарифы" },
   { id: "news", label: "Новости" },
   { id: "reviews", label: "Отзывы" },
