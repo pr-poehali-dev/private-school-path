@@ -148,6 +148,38 @@ export const TEACHERS = [
     color: "from-lime-500 to-green-600",
   },
   {
+    name: "Константин Александрович",
+    role: "Тренер по шахматам · КМС",
+    photo: "https://cdn.poehali.dev/projects/c9fb471b-567a-4bfb-bdc0-b51d4bb4ad8e/bucket/30469998-263a-4777-b0fd-0b3a7c7a7ce5.jpg",
+    subjects: ["шахматы", "развитие мышления", "подготовка к турнирам"],
+    facts: [
+      "КМС советских времён, текущий рейтинг на Lichess — 2428",
+      "Тренерский стаж более 25 лет",
+      "Работает с начинающими и шахматистами до 1 разряда",
+      "Среди учеников — шахматисты массовых разрядов",
+      "Работает с учётом индивидуально-психологических особенностей учеников",
+      "Готовит детей к победам в районных и городских соревнованиях",
+    ],
+    diplomas: [
+      {
+        title: "Грамота · 1 место",
+        desc: "Соревнования по быстрым шахматам г.о. Мытищи · 80-летие Победы",
+        img: "https://cdn.poehali.dev/projects/c9fb471b-567a-4bfb-bdc0-b51d4bb4ad8e/bucket/6692e495-676e-488b-b4ed-aa3c12edb81c.jpg",
+      },
+      {
+        title: "Грамота · 1 место",
+        desc: "Детский шахматный турнир «Летний кубок Королёва» · 24.08.2025",
+        img: "https://cdn.poehali.dev/projects/c9fb471b-567a-4bfb-bdc0-b51d4bb4ad8e/bucket/7bd01944-7057-47b8-9d02-5f637e87a167.jpg",
+      },
+      {
+        title: "Диплом · 1 место",
+        desc: "Чемпионат Федерации шахмат г.о. Мытищи · 9 ноября 2024",
+        img: "https://cdn.poehali.dev/projects/c9fb471b-567a-4bfb-bdc0-b51d4bb4ad8e/bucket/64f6c8b5-b8c5-4c69-bd42-6f895ebe9a5f.jpg",
+      },
+    ],
+    color: "from-amber-600 to-yellow-700",
+  },
+  {
     name: "Дубова Татьяна Николаевна",
     photo: "https://cdn.poehali.dev/projects/c9fb471b-567a-4bfb-bdc0-b51d4bb4ad8e/bucket/ecfcf7ca-3969-4fc9-ad12-a0a0d43e694e.jpg",
     subjects: ["начальная школа", "русский язык", "математика", "чтение"],
