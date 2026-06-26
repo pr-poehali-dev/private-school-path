@@ -132,6 +132,17 @@ export default function HeroAboutPrograms({ scrollTo }: Props) {
                   </div>
                 ))}
               </div>
+
+              <a
+                href="https://cdn.poehali.dev/projects/c9fb471b-567a-4bfb-bdc0-b51d4bb4ad8e/bucket/docs/license.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-3 grad-bg text-white font-semibold px-6 py-4 rounded-2xl hover:opacity-90 transition-all hover:scale-105 shadow-lg"
+              >
+                <Icon name="FileText" size={20} className="text-white" />
+                Скачать образовательную лицензию
+                <Icon name="Download" size={18} className="text-white" />
+              </a>
             </div>
           </div>
         </div>

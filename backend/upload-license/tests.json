@@ -1,0 +1,1 @@
+{"tests": [{"name": "Upload license PDF", "method": "GET", "path": "/", "expectedStatus": 200, "expectedBody": {"url": "string"}, "bodyMatcher": "partial"}]}
