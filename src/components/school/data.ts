@@ -16,7 +16,7 @@ export const NAV_ITEMS = [
 
 export const TEACHERS = [
   {
-    name: "Диминова Розенберг Анжела Марковна",
+    name: "Деминова-Розенберг Анжела Марковна",
     role: "Основатель центра",
     photo: "https://cdn.poehali.dev/projects/c9fb471b-567a-4bfb-bdc0-b51d4bb4ad8e/bucket/dc9bef7f-7bd4-4168-b842-0a40c3eda25e.png",
     subjects: ["управление центром", "право", "нейропсихология детей и взрослых"],
