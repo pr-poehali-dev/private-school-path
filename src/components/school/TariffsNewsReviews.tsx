@@ -1,7 +1,12 @@
+import { useState } from "react";
 import Icon from "@/components/ui/icon";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { TARIFF_CATEGORIES, LOGO_TARIFFS, LOGO_SCHOOL_READY, DISCOUNTS, EXTENDED_DAY, NEWS, REVIEWS } from "./data";
 
 export default function TariffsNewsReviews() {
+  const [openNews, setOpenNews] = useState<number | null>(null);
+  const active = openNews !== null ? NEWS[openNews] : null;
+
   return (
     <>
       {/* ── TARIFFS ── */}
@@ -171,7 +176,8 @@ export default function TariffsNewsReviews() {
             {NEWS.map((news, i) => (
               <div
                 key={news.title}
-                className="section-fade card-hover bg-white rounded-3xl p-6 border border-gray-100 cursor-pointer"
+                onClick={() => "body" in news && setOpenNews(i)}
+                className={`section-fade card-hover bg-white rounded-3xl p-6 border border-gray-100 ${"body" in news ? "cursor-pointer" : ""}`}
                 style={{ transitionDelay: `${i * 0.1}s` }}
               >
                 <div className="flex items-center gap-3 mb-4">
@@ -182,9 +188,14 @@ export default function TariffsNewsReviews() {
                   </span>
                 </div>
                 <h3 className="font-montserrat font-bold text-gray-900 text-lg leading-snug mb-3">{news.title}</h3>
-                <button className="grad-text text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
-                  Читать далее <Icon name="ArrowRight" size={14} />
-                </button>
+                {"body" in news && (
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setOpenNews(i); }}
+                    className="grad-text text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all"
+                  >
+                    Читать далее <Icon name="ArrowRight" size={14} />
+                  </button>
+                )}
               </div>
             ))}
           </div>
@@ -228,6 +239,30 @@ export default function TariffsNewsReviews() {
           </div>
         </div>
       </section>
+
+      <Dialog open={openNews !== null} onOpenChange={(o) => !o && setOpenNews(null)}>
+        <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
+          {active && (
+            <>
+              <DialogHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <span className={`text-xs font-bold px-3 py-1 rounded-full ${active.color}`}>{active.tag}</span>
+                  <span className="text-gray-400 text-sm flex items-center gap-1">
+                    <Icon name="Calendar" size={12} />
+                    {active.date}
+                  </span>
+                </div>
+                <DialogTitle className="font-montserrat font-black text-2xl text-gray-900 leading-snug text-left">
+                  {active.title}
+                </DialogTitle>
+              </DialogHeader>
+              <div className="space-y-4 text-gray-600 leading-relaxed mt-2">
+                {"body" in active && active.body?.map((p, i) => <p key={i}>{p}</p>)}
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
