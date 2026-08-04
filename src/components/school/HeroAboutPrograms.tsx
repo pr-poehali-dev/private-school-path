@@ -1,5 +1,5 @@
 import Icon from "@/components/ui/icon";
-import { SCHOOL_IMG, CLASSROOM_IMG, PROGRAMS, NAV_ITEMS } from "./data";
+import { SCHOOL_IMG, CLASSROOM_IMG, PROGRAMS, NAV_ITEMS, PROGRAM_DOCS } from "./data";
 
 interface Props {
   scrollTo: (id: string) => void;
@@ -169,36 +169,24 @@ export default function HeroAboutPrograms({ scrollTo }: Props) {
               Документы <span className="grad-text">программ</span>
             </h3>
             <div className="grid sm:grid-cols-2 gap-4">
-              <a
-                href="https://cdn.poehali.dev/projects/c9fb471b-567a-4bfb-bdc0-b51d4bb4ad8e/bucket/docs/ecp-rp.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 bg-gray-50 rounded-2xl p-5 border border-gray-100 card-hover hover:bg-white transition-colors"
-              >
-                <div className="w-12 h-12 grad-bg rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                  <Icon name="FileText" size={20} className="text-white" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Документ</div>
-                  <div className="font-semibold text-gray-900">Образовательная программа</div>
-                  <div className="text-gray-400 text-sm mt-0.5">PDF</div>
-                </div>
-              </a>
-              <a
-                href="https://cdn.poehali.dev/projects/c9fb471b-567a-4bfb-bdc0-b51d4bb4ad8e/bucket/docs/programma-podgotovka-k-shkole.docx"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 bg-gray-50 rounded-2xl p-5 border border-gray-100 card-hover hover:bg-white transition-colors"
-              >
-                <div className="w-12 h-12 grad-bg rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                  <Icon name="GraduationCap" size={20} className="text-white" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Программа</div>
-                  <div className="font-semibold text-gray-900">Подготовка к школе</div>
-                  <div className="text-gray-400 text-sm mt-0.5">DOCX</div>
-                </div>
-              </a>
+              {PROGRAM_DOCS.map((doc) => (
+                <a
+                  key={doc.title}
+                  href={doc.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 bg-gray-50 rounded-2xl p-5 border border-gray-100 card-hover hover:bg-white transition-colors"
+                >
+                  <div className="w-12 h-12 grad-bg rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <Icon name={doc.icon} size={20} className="text-white" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Программа</div>
+                    <div className="font-semibold text-gray-900">{doc.title}</div>
+                    <div className="text-gray-400 text-sm mt-0.5">{doc.type}</div>
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
         </div>

@@ -2,6 +2,18 @@ export const SCHOOL_IMG = "https://cdn.poehali.dev/projects/c9fb471b-567a-4bfb-b
 export const CLASSROOM_IMG = "https://cdn.poehali.dev/projects/c9fb471b-567a-4bfb-bdc0-b51d4bb4ad8e/files/dcff1098-d24f-4bea-b56e-070032e35376.jpg";
 export const TEACHER_IMG = "https://cdn.poehali.dev/projects/c9fb471b-567a-4bfb-bdc0-b51d4bb4ad8e/files/1c300c96-29f6-41af-9667-03664bf01101.jpg";
 
+const CDN = "https://cdn.poehali.dev/projects/c9fb471b-567a-4bfb-bdc0-b51d4bb4ad8e/bucket";
+
+export const PROGRAM_DOCS = [
+  { title: "Образовательная программа", type: "PDF", icon: "FileText", url: `${CDN}/docs/ecp-rp.pdf` },
+  { title: "Подготовка к школе", type: "DOCX", icon: "GraduationCap", url: `${CDN}/docs/programma-podgotovka-k-shkole.docx` },
+  { title: "Информатика", type: "DOCX", icon: "Monitor", url: `${CDN}/docs/programs/informatika.docx` },
+  { title: "Логопедия", type: "DOCX", icon: "MessageCircle", url: `${CDN}/docs/programs/logopediya.docx` },
+  { title: "Нейропсихология", type: "DOCX", icon: "Brain", url: `${CDN}/docs/programs/neyropsihologiya.docx` },
+  { title: "ОГЭ и ЕГЭ", type: "DOCX", icon: "ClipboardCheck", url: `${CDN}/docs/programs/oge-ege.docx` },
+  { title: "Иностранные языки", type: "DOCX", icon: "Languages", url: `${CDN}/docs/programs/inostrannye-yazyki.docx` },
+];
+
 export const NAV_ITEMS = [
   { id: "home", label: "Главная" },
   { id: "about", label: "О центре" },
