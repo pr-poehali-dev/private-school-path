@@ -370,6 +370,20 @@ export const LOGO_SCHOOL_READY = [
   { name: "Специалисты: логопед, учитель начальной школы", age: "6–7 лет", dur: "1,5–2 часа", price: 5500 },
 ];
 
+export const MINI_GARDEN = {
+  age: "2,3 – 4,5 года",
+  term: "5 недель (с момента первого занятия)",
+  single: 2875,
+  schedules: ["9:00 – 13:00", "10:00 – 16:00"],
+  plans: [
+    { times: "1 раз в неделю", days: "4 дня в месяц", price: 11500 },
+    { times: "2 раза в неделю", days: "8 дней в месяц", price: 18400 },
+    { times: "3 раза в неделю", days: "12 дней в месяц", price: 27600 },
+    { times: "4 раза в неделю", days: "16 дней в месяц", price: 36800 },
+    { times: "5 раз в неделю", days: "20 дней в месяц", price: 46000 },
+  ],
+};
+
 export const DISCOUNTS = [
   { icon: "Users", color: "from-green-500 to-emerald-600", title: "Многодетным скидка 5%", desc: "на групповые абонементы (кроме единого абонемента, пробных и разовых — полная цена)" },
   { icon: "UserPlus", color: "from-sky-500 to-blue-600", title: "Скидка 7% «Приведи друга»", desc: "скидка для себя и друга" },

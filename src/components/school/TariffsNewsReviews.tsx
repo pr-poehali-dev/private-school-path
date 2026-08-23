@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { TARIFF_CATEGORIES, LOGO_TARIFFS, LOGO_SCHOOL_READY, DISCOUNTS, EXTENDED_DAY, NEWS, REVIEWS } from "./data";
+import { TARIFF_CATEGORIES, LOGO_TARIFFS, LOGO_SCHOOL_READY, MINI_GARDEN, DISCOUNTS, EXTENDED_DAY, NEWS, REVIEWS } from "./data";
 
 export default function TariffsNewsReviews() {
   const [openNews, setOpenNews] = useState<number | null>(null);
@@ -106,6 +106,45 @@ export default function TariffsNewsReviews() {
                   <div className="font-montserrat font-black text-2xl text-rose-600 flex-shrink-0">{item.price.toLocaleString()} ₽</div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* ── МИНИ-САД ── */}
+          <div id="mini-garden" className="mt-14 section-fade">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-4">
+              <Icon name="Baby" size={16} /> Мини-сад
+            </div>
+            <div className="rounded-3xl border border-amber-100 bg-amber-50/50 p-6">
+              <div className="grid sm:grid-cols-3 gap-4 mb-6">
+                <div className="bg-white rounded-2xl p-4 border border-amber-100">
+                  <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Возраст</div>
+                  <div className="font-semibold text-gray-900">{MINI_GARDEN.age}</div>
+                </div>
+                <div className="bg-white rounded-2xl p-4 border border-amber-100">
+                  <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Группы</div>
+                  <div className="font-semibold text-gray-900">{MINI_GARDEN.schedules.join(" · ")}</div>
+                </div>
+                <div className="bg-white rounded-2xl p-4 border border-amber-100">
+                  <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Разовое посещение</div>
+                  <div className="font-montserrat font-black text-xl text-orange-600">{MINI_GARDEN.single.toLocaleString()} ₽</div>
+                </div>
+              </div>
+
+              <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Абонементы</div>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                {MINI_GARDEN.plans.map((p) => (
+                  <div key={p.times} className="bg-white rounded-2xl p-4 border border-amber-100 card-hover text-center">
+                    <div className="font-semibold text-gray-900 text-sm">{p.times}</div>
+                    <div className="text-gray-400 text-xs mt-0.5">{p.days}</div>
+                    <div className="font-montserrat font-black text-2xl text-orange-600 mt-3">{p.price.toLocaleString()} ₽</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-5 text-sm text-gray-500 flex gap-2 items-start">
+                <Icon name="Info" size={16} className="flex-shrink-0 mt-0.5 text-amber-500" />
+                <span>Срок действия абонемента — {MINI_GARDEN.term}.</span>
+              </div>
             </div>
           </div>
 
