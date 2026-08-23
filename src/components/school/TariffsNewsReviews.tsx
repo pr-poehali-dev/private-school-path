@@ -110,7 +110,7 @@ export default function TariffsNewsReviews() {
           </div>
 
           {/* ── МИНИ-САД ── */}
-          <div id="mini-garden" className="mt-14 section-fade">
+          <div id="mini-garden" className="mt-14 scroll-mt-24 section-fade">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-4">
               <Icon name="Baby" size={16} /> Мини-сад
             </div>

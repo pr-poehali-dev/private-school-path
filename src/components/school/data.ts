@@ -21,6 +21,7 @@ export const NAV_ITEMS = [
   { id: "teachers", label: "Педагоги" },
   { id: "chess", label: "Шахматы" },
   { id: "tariffs", label: "Тарифы" },
+  { id: "mini-garden", label: "Мини-сад" },
   { id: "news", label: "Новости" },
   { id: "reviews", label: "Отзывы" },
   { id: "contacts", label: "Контакты" },
