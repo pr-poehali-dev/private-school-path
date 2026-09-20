@@ -42,11 +42,17 @@ export default function TeachersSection() {
           <div className="flex flex-col items-center gap-6">
             <div className="relative">
               <div className={`w-56 h-56 rounded-3xl overflow-hidden shadow-2xl ring-4 ring-offset-4 bg-gradient-to-br ${teacher.color}`} style={{ ringColor: "transparent" }}>
-                <img
-                  src={teacher.photo}
-                  alt={teacher.name}
-                  className="w-full h-full object-cover object-top"
-                />
+                {teacher.photo ? (
+                  <img
+                    src={teacher.photo}
+                    alt={teacher.name}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-white font-montserrat font-black text-5xl">
+                    {teacher.name.split(" ").slice(1, 3).map((w) => w[0]).join("")}
+                  </div>
+                )}
               </div>
               <div className={`absolute -bottom-3 -right-3 w-12 h-12 rounded-2xl bg-gradient-to-br ${teacher.color} flex items-center justify-center shadow-lg`}>
                 <Icon name="GraduationCap" size={22} className="text-white" />
