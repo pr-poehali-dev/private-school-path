@@ -1,0 +1,16 @@
+{
+  "tests": [
+    {
+      "name": "Публичные данные онлайн-школы",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "CORS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    }
+  ]
+}

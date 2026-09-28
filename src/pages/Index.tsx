@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { NAV_ITEMS } from "@/components/school/data";
 import HeroAboutPrograms from "@/components/school/HeroAboutPrograms";
@@ -72,7 +73,14 @@ export default function Index() {
             </span>
           </div>
 
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-5">
+            <Link
+              to="/online"
+              className="grad-bg-2 text-white text-xs font-black uppercase tracking-wide px-4 py-2 rounded-xl hover:opacity-90 transition-opacity shadow-lg flex items-center gap-2"
+            >
+              <Icon name="Monitor" size={15} />
+              Онлайн-школа
+            </Link>
             {NAV_ITEMS.map((item) => (
               <button
                 key={item.id}
@@ -99,7 +107,14 @@ export default function Index() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="lg:hidden absolute top-16 left-0 right-0 bg-white/95 backdrop-blur shadow-xl border-t border-gray-100 py-4 px-4">
+          <div className="lg:hidden absolute top-16 left-0 right-0 bg-white/95 backdrop-blur shadow-xl border-t border-gray-100 py-4 px-4 max-h-[75vh] overflow-y-auto">
+            <Link
+              to="/online"
+              className="grad-bg-2 text-white font-black uppercase tracking-wide text-sm py-3.5 rounded-xl mb-3 flex items-center justify-center gap-2 shadow-lg"
+            >
+              <Icon name="Monitor" size={17} />
+              Онлайн-школа
+            </Link>
             {NAV_ITEMS.map((item) => (
               <button
                 key={item.id}
