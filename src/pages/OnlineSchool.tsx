@@ -104,9 +104,37 @@ export default function OnlineSchool() {
         preset={preset}
       />
 
+      {data.news.length > 0 && (
+        <section id="online-news" className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="font-montserrat font-black text-3xl sm:text-4xl text-gray-900 text-center mb-12">
+              Новости <span className="grad-text">онлайн-школы</span>
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {data.news.map((n) => (
+                <article key={n.id} className="bg-gray-50 rounded-3xl p-6 border border-gray-100">
+                  <div className="text-xs font-bold text-violet-600 uppercase tracking-wider mb-3">
+                    {new Date(n.published_at).toLocaleDateString("ru-RU", { day: "numeric", month: "long", year: "numeric" })}
+                  </div>
+                  <h3 className="font-montserrat font-black text-lg text-gray-900 mb-3">{n.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed whitespace-pre-line">{n.body}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* SEO-текст */}
       <section className="py-14 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 text-sm text-gray-400 leading-relaxed space-y-3">
+          <div className="flex flex-wrap gap-2 mb-4">
+            {data.directions.map((d) => (
+              <Link key={d.id} to={`/online/${d.slug}`} className="bg-white border border-gray-200 text-gray-600 hover:text-violet-600 hover:border-violet-200 rounded-full px-3 py-1.5 text-xs font-medium transition-colors">
+                {/онлайн/i.test(d.title) ? d.title : `${d.title} онлайн`}
+              </Link>
+            ))}
+          </div>
           <h2 className="font-montserrat font-bold text-gray-500 text-base">Онлайн-школа для детей и школьников</h2>
           <p>
             Онлайн-школа «Путь к Знаниям» — это занятия онлайн для школьников и дошкольников: репетитор онлайн по

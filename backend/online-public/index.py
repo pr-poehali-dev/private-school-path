@@ -1,5 +1,6 @@
 import json
 import os
+import urllib.request
 import psycopg2
 from psycopg2.extras import RealDictCursor
 
@@ -16,6 +17,30 @@ def esc(v):
 
 
 S = os.environ.get('MAIN_DB_SCHEMA', 'public')
+
+
+LABELS = [
+    ('parent_name', 'Родитель'), ('child_name', 'Ребёнок'), ('child_age', 'Возраст'), ('grade', 'Класс'),
+    ('subject', 'Предмет'), ('format', 'Формат'), ('preferred_time', 'Время'), ('phone', 'Телефон'),
+    ('email', 'E-mail'), ('comment', 'Комментарий'),
+]
+
+
+def notify_telegram(data: dict, req_id: int):
+    token = os.environ.get('TELEGRAM_BOT_TOKEN')
+    chat_id = os.environ.get('TELEGRAM_CHAT_ID')
+    if not token or not chat_id:
+        return
+    lines = [f'Новая заявка в онлайн-школу #{req_id}']
+    for key, label in LABELS:
+        if data.get(key):
+            lines.append(f'{label}: {str(data.get(key))[:500]}')
+    payload = json.dumps({'chat_id': chat_id, 'text': '\n'.join(lines)}).encode()
+    req = urllib.request.Request(f'https://api.telegram.org/bot{token}/sendMessage', data=payload, headers={'Content-Type': 'application/json'})
+    try:
+        urllib.request.urlopen(req, timeout=3)
+    except Exception as e:
+        print(f'telegram error: {e}')
 
 
 def get_conn():
@@ -43,7 +68,7 @@ def handler(event: dict, context) -> dict:
             cur.execute(f"SELECT * FROM {S}.online_faq WHERE is_active = TRUE ORDER BY sort_order, id")
             faq = cur.fetchall()
             cur.execute(f"SELECT key, value FROM {S}.online_settings")
-            settings = {r['key']: r['value'] for r in cur.fetchall()}
+            settings = {r['key']: r['value'] for r in cur.fetchall() if r['key'] != 'admin_password'}
             cur.execute(f"SELECT * FROM {S}.online_news WHERE is_published = TRUE ORDER BY published_at DESC, id DESC LIMIT 20")
             news = cur.fetchall()
         conn.close()
@@ -67,6 +92,7 @@ def handler(event: dict, context) -> dict:
             new_id = cur.fetchone()[0]
         conn.commit()
         conn.close()
+        notify_telegram(data, new_id)
         return {'statusCode': 200, 'headers': CORS, 'body': json.dumps({'success': True, 'id': new_id}, ensure_ascii=False)}
 
     conn.close()

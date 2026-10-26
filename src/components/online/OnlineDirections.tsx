@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import type { Direction } from "./api";
@@ -95,6 +96,12 @@ export default function OnlineDirections({ directions, scrollTo, onPick }: Props
                 >
                   Записаться на это направление
                 </button>
+                <Link
+                  to={`/online/${open.slug}`}
+                  className="block text-center text-sm font-semibold text-violet-600 hover:underline"
+                >
+                  Открыть страницу направления →
+                </Link>
               </div>
             </>
           )}
