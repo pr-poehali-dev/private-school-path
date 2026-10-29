@@ -41,7 +41,7 @@ export default function TeachersSection() {
           {/* Left: photo + subjects */}
           <div className="flex flex-col items-center gap-6">
             <div className="relative">
-              <div className={`w-56 h-56 rounded-3xl overflow-hidden shadow-2xl ring-4 ring-offset-4 bg-gradient-to-br ${teacher.color}`} style={{ ringColor: "transparent" }}>
+              <div className={`w-56 h-56 rounded-3xl overflow-hidden shadow-2xl ring-4 ring-offset-4 bg-gradient-to-br ${teacher.color}`}>
                 {teacher.photo ? (
                   <img
                     src={teacher.photo}

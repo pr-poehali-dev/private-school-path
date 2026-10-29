@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import Icon from "@/components/ui/icon";
-import { fetchPublicData, type PublicData } from "@/components/online/api";
-import { useSeo } from "@/components/online/useSeo";
+import type { PublicData } from "@/components/online/api";
 import OnlineNav from "@/components/online/OnlineNav";
 import OnlineHero from "@/components/online/OnlineHero";
 import OnlineDirections from "@/components/online/OnlineDirections";
@@ -11,32 +10,9 @@ import OnlineSchedule from "@/components/online/OnlineSchedule";
 import OnlinePricesTeachers from "@/components/online/OnlinePricesTeachers";
 import OnlineReviewsFaq from "@/components/online/OnlineReviewsFaq";
 
-const EMPTY: PublicData = {
-  directions: [],
-  teachers: [],
-  schedule: [],
-  reviews: [],
-  faq: [],
-  settings: {},
-  news: [],
-};
-
-export default function OnlineSchool() {
-  const [data, setData] = useState<PublicData>(EMPTY);
-  const [loading, setLoading] = useState(true);
+export default function OnlineSchool({ data }: { data: PublicData }) {
+  const loading = false;
   const [preset, setPreset] = useState({ subject: "", format: "", time: "" });
-
-  useSeo(
-    "Онлайн-школа «Путь к Знаниям» — занятия онлайн для детей и школьников",
-    "Онлайн-школа «Путь к Знаниям»: репетитор онлайн, подготовка к школе онлайн, логопед и дефектолог онлайн, подготовка к ОГЭ и ЕГЭ онлайн. Индивидуальные и групповые занятия для детей и школьников."
-  );
-
-  useEffect(() => {
-    fetchPublicData()
-      .then(setData)
-      .catch(() => setData(EMPTY))
-      .finally(() => setLoading(false));
-  }, []);
 
   useEffect(() => {
     if (loading) return;
@@ -114,7 +90,7 @@ export default function OnlineSchool() {
               {data.news.map((n) => (
                 <article key={n.id} className="bg-gray-50 rounded-3xl p-6 border border-gray-100">
                   <div className="text-xs font-bold text-violet-600 uppercase tracking-wider mb-3">
-                    {new Date(n.published_at).toLocaleDateString("ru-RU", { day: "numeric", month: "long", year: "numeric" })}
+                    {new Date(n.published_at).toLocaleDateString("ru-RU", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}
                   </div>
                   <h3 className="font-montserrat font-black text-lg text-gray-900 mb-3">{n.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed whitespace-pre-line">{n.body}</p>

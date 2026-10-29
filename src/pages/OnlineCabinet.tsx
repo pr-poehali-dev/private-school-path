@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import Icon from "@/components/ui/icon";
 import { CABINET_URL, GRADES } from "@/components/online/api";
-import { useSeo } from "@/components/online/useSeo";
 
 interface Student {
   id: number;
@@ -44,7 +43,6 @@ export default function OnlineCabinet() {
   const [error, setError] = useState("");
   const [form, setForm] = useState({ login: "", password: "", child_name: "", parent_name: "", grade: "", phone: "", email: "" });
 
-  useSeo("Личный кабинет ученика — онлайн-школа «Путь к Знаниям»", "Личный кабинет ученика онлайн-школы «Путь к Знаниям»: расписание занятий, домашние задания, материалы, оценки и оплата.");
 
   const load = async (t: string) => {
     const res = await fetch(CABINET_URL, { headers: { "X-Auth-Token": t } });

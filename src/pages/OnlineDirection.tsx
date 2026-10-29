@@ -1,28 +1,20 @@
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useParams } from "@/lib/router-compat";
 import Icon from "@/components/ui/icon";
-import { fetchPublicData, type PublicData } from "@/components/online/api";
-import { useSeo } from "@/components/online/useSeo";
+import type { PublicData } from "@/components/online/api";
 import RequestForm from "@/components/online/RequestForm";
 
-export default function OnlineDirection() {
+export default function OnlineDirection({ data }: { data: PublicData | null }) {
   const { slug } = useParams();
-  const [data, setData] = useState<PublicData | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetchPublicData().then(setData).catch(() => setData(null));
   }, [slug]);
 
   const d = data?.directions.find((x) => x.slug === slug);
   const key = (d?.title || "").toLowerCase().split(" ")[0];
   const teachers = (data?.teachers || []).filter((t) => key && t.directions.toLowerCase().includes(key));
   const others = (data?.directions || []).filter((x) => x.slug !== slug).slice(0, 6);
-
-  useSeo(
-    d ? `${/онлайн/i.test(d.title) ? d.title : d.title + " онлайн"} — онлайн-школа «Путь к Знаниям»` : "Онлайн-школа «Путь к Знаниям»",
-    d ? (d.seo_text || d.short_desc) : "Занятия онлайн для детей и школьников"
-  );
 
   if (!data) {
     return (

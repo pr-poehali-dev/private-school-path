@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import Icon from "@/components/ui/icon";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ADMIN_URL } from "@/components/online/api";
 import { ENTITIES, SETTING_FIELDS, type EntityDef } from "@/components/online/adminConfig";
-import { useSeo } from "@/components/online/useSeo";
 
 type Row = Record<string, string | number | boolean | null>;
 
@@ -22,7 +21,6 @@ export default function OnlineAdmin() {
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
 
-  useSeo("Администрирование онлайн-школы «Путь к Знаниям»", "Панель администратора онлайн-школы.");
 
   const load = async (p: string) => {
     const res = await fetch(ADMIN_URL, { headers: { "X-Admin-Password": p } });

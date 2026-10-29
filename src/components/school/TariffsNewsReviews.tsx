@@ -45,10 +45,10 @@ export default function TariffsNewsReviews() {
                           <td className="px-4 py-3 font-medium text-gray-800">{item.name}</td>
                           <td className="px-3 py-3 text-center text-gray-500">{item.age}</td>
                           <td className="px-3 py-3 text-center text-gray-500">{item.dur}</td>
-                          <td className="px-3 py-3 text-center font-semibold text-violet-600">{item.trial.toLocaleString()} ₽</td>
-                          <td className="px-3 py-3 text-center text-gray-700">{item.a4 ? `${item.a4.toLocaleString()} ₽` : <span className="text-gray-300">—</span>}</td>
-                          <td className="px-3 py-3 text-center text-gray-700">{item.a8 ? `${item.a8.toLocaleString()} ₽` : <span className="text-gray-300">—</span>}</td>
-                          <td className="px-3 py-3 text-center text-gray-700">{item.a12 ? `${item.a12.toLocaleString()} ₽` : <span className="text-gray-300">—</span>}</td>
+                          <td className="px-3 py-3 text-center font-semibold text-violet-600">{item.trial.toLocaleString("ru-RU")} ₽</td>
+                          <td className="px-3 py-3 text-center text-gray-700">{item.a4 ? `${item.a4.toLocaleString("ru-RU")} ₽` : <span className="text-gray-300">—</span>}</td>
+                          <td className="px-3 py-3 text-center text-gray-700">{item.a8 ? `${item.a8.toLocaleString("ru-RU")} ₽` : <span className="text-gray-300">—</span>}</td>
+                          <td className="px-3 py-3 text-center text-gray-700">{item.a12 ? `${item.a12.toLocaleString("ru-RU")} ₽` : <span className="text-gray-300">—</span>}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -81,9 +81,9 @@ export default function TariffsNewsReviews() {
                       <td className="px-4 py-3 font-medium text-gray-800">{item.name}</td>
                       <td className="px-3 py-3 text-center text-gray-500">{item.age}</td>
                       <td className="px-3 py-3 text-center text-gray-500">{item.dur}</td>
-                      <td className="px-3 py-3 text-center font-semibold text-sky-600">{item.single.toLocaleString()} ₽</td>
-                      <td className="px-3 py-3 text-center text-gray-700">{item.a4 ? `${item.a4.toLocaleString()} ₽` : <span className="text-gray-300">—</span>}</td>
-                      <td className="px-3 py-3 text-center text-gray-700">{item.a8 ? `${item.a8.toLocaleString()} ₽` : <span className="text-gray-300">—</span>}</td>
+                      <td className="px-3 py-3 text-center font-semibold text-sky-600">{item.single.toLocaleString("ru-RU")} ₽</td>
+                      <td className="px-3 py-3 text-center text-gray-700">{item.a4 ? `${item.a4.toLocaleString("ru-RU")} ₽` : <span className="text-gray-300">—</span>}</td>
+                      <td className="px-3 py-3 text-center text-gray-700">{item.a8 ? `${item.a8.toLocaleString("ru-RU")} ₽` : <span className="text-gray-300">—</span>}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -103,7 +103,7 @@ export default function TariffsNewsReviews() {
                     <div className="font-semibold text-gray-800 text-sm leading-snug">{item.name}</div>
                     <div className="text-gray-400 text-xs mt-1">{item.age} · {item.dur}</div>
                   </div>
-                  <div className="font-montserrat font-black text-2xl text-rose-600 flex-shrink-0">{item.price.toLocaleString()} ₽</div>
+                  <div className="font-montserrat font-black text-2xl text-rose-600 flex-shrink-0">{item.price.toLocaleString("ru-RU")} ₽</div>
                 </div>
               ))}
             </div>
@@ -126,7 +126,7 @@ export default function TariffsNewsReviews() {
                 </div>
                 <div className="bg-white rounded-2xl p-4 border border-amber-100">
                   <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Разовое посещение</div>
-                  <div className="font-montserrat font-black text-xl text-orange-600">{MINI_GARDEN.single.toLocaleString()} ₽</div>
+                  <div className="font-montserrat font-black text-xl text-orange-600">{MINI_GARDEN.single.toLocaleString("ru-RU")} ₽</div>
                 </div>
               </div>
 
@@ -136,7 +136,7 @@ export default function TariffsNewsReviews() {
                   <div key={p.times} className="bg-white rounded-2xl p-4 border border-amber-100 card-hover text-center">
                     <div className="font-semibold text-gray-900 text-sm">{p.times}</div>
                     <div className="text-gray-400 text-xs mt-0.5">{p.days}</div>
-                    <div className="font-montserrat font-black text-2xl text-orange-600 mt-3">{p.price.toLocaleString()} ₽</div>
+                    <div className="font-montserrat font-black text-2xl text-orange-600 mt-3">{p.price.toLocaleString("ru-RU")} ₽</div>
                   </div>
                 ))}
               </div>
@@ -185,8 +185,8 @@ export default function TariffsNewsReviews() {
                       <td className="px-3 py-3 text-center text-gray-500">{item.age}</td>
                       <td className="px-3 py-3 text-center text-gray-500">{item.time}</td>
                       <td className="px-3 py-3 text-center whitespace-nowrap">
-                        <span className="font-montserrat font-black text-rose-600">{item.price.toLocaleString()} ₽</span>
-                        <span className="text-gray-400 line-through text-xs ml-2">{item.old.toLocaleString()} ₽</span>
+                        <span className="font-montserrat font-black text-rose-600">{item.price.toLocaleString("ru-RU")} ₽</span>
+                        <span className="text-gray-400 line-through text-xs ml-2">{item.old.toLocaleString("ru-RU")} ₽</span>
                       </td>
                     </tr>
                   ))}
